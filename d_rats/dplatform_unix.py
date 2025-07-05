@@ -85,7 +85,7 @@ class UnixPlatform(PlatformGeneric):
         :returns: The serial ports
         :rtype: list of str
         '''
-        return sorted(glob.glob("/dev/ttyS*") + glob.glob("/dev/ttyUSB*"))
+        return sorted(glob.glob("/dev/ttyS*") + glob.glob("/dev/ttyUSB*") + glob.glob("/dev/ttyACM*"))
 
     def os_version_string(self):
         '''
