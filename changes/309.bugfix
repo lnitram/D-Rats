@@ -1,0 +1,1 @@
+Better handling of serial ports to allow ports like /dev/ttyACM0 and others
