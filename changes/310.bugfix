@@ -1,0 +1,1 @@
+Add /dev/ttyACM* to the list of serial ports to support radios like Kenwood TH-D74 on Ubuntu 24.04
