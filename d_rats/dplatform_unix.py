@@ -21,6 +21,7 @@ import logging
 import glob
 import os
 import subprocess
+import serial.tools.list_ports
 
 from .dplatform_generic import PlatformGeneric
 
@@ -85,11 +86,7 @@ class UnixPlatform(PlatformGeneric):
         :returns: The serial ports
         :rtype: list of str
         '''
-        return sorted(
-                glob.glob("/dev/ttyS*") + 
-                glob.glob("/dev/ttyUSB*") + 
-                glob.glob("/dev/ttyACM*")
-        )
+        return [port.device for port in serial.tools.list_ports.comports()]
 
     def os_version_string(self):
         '''
